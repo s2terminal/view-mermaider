@@ -6,3 +6,4 @@ ADD package.json ./
 ADD yarn.lock ./
 
 RUN yarn install
+RUN yarn run tsc
