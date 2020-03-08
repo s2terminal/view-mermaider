@@ -1,10 +1,7 @@
 # View Mermaider
-git clone and run this.
-```
-$ docker-compose run --rm node yarn start
-```
+Parse SQL view files and output [mermaid.js](https://mermaid-js.github.io/mermaid/#/) flowcharts.
 
-## Example
+## Usage
 `tmp/sql/a.sql`
 ```sql
 SELECT * FROM origin
@@ -21,7 +18,9 @@ SELECT * FROM a
   LEFT JOIN b ON b.id = a.id
 ```
 
-run `$ ./bin/index.js`
+run `$ npx github:s2terminal/view-mermaider view-mermaider ./tmp/sql/`
+
+or git clone and run `$ docker-compose run --rm node yarn start ./tmp/sql/`
 
 ```
 graph BT
@@ -30,3 +29,5 @@ graph BT
   c-->a;
   c-->b;
 ```
+
+![mermaid-diagram-20200308232722](https://user-images.githubusercontent.com/7953751/76164724-72f60000-6194-11ea-84b2-a57ba64a2181.png)
