@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  node:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 127.0.0.1:3000:3000
+    command: "yarn run start"
+  code:
+    image: codercom/code-server
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - ./:/home/coder/app
+    entrypoint: "code-server --auth none /home/coder/app"
