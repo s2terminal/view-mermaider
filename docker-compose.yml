@@ -3,7 +3,7 @@ services:
   node:
     build: .
     volumes:
-      - .:/app
+      - ./:/app
     ports:
       - 127.0.0.1:3000:3000
     command: "yarn run start"
